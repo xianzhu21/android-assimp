@@ -1,3 +1,9 @@
+# android-assimp
+
+Based on kotlin-graphics/assimp and for Android app.
+
+----
+
 # assimp
 
 [![Build Status](https://github.com/kotlin-graphics/assimp/workflows/build/badge.svg)](https://github.com/kotlin-graphics/assimp/actions?workflow=build)
