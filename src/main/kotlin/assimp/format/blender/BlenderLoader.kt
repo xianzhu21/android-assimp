@@ -1,5 +1,6 @@
 package assimp.format.blender
 
+import InputStreamHelper
 import assimp.*
 import assimp.format.X.ArrayList
 import assimp.format.X.pushBack
@@ -77,7 +78,8 @@ class BlenderImporter : BaseImporter() {    // TODO should this be open? The C++
             // compressed blend file and try uncompressing it, else fail. This is to
             // avoid uncompressing random files which our loader might end up with.
 
-            val bytes = GZIPInputStream(stream.read()).readAllBytes()
+//            val bytes = GZIPInputStream(stream.read()).readAllBytes()
+			val bytes = InputStreamHelper.readAllBytes(GZIPInputStream(stream.read()))
 			buffer = ByteBuffer.wrap(bytes)
             match = buffer.strncmp(tokens)
             if (!match) throw Exception("Found no BLENDER magic word in decompressed GZIP file")
